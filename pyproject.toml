@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oces"
+version = "0.1.0"
+description = "IFC-centric node-based construction engineering skill engine"
+requires-python = ">=3.10"
+dependencies = ["ifcopenshell>=0.8,<0.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+oces = "oces.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
